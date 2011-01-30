@@ -265,7 +265,7 @@ function getVideoFileUrl($id) {
 	
 	private function get($url) {
 		$f = 1;
-		$c = 2;//1 for header, 2 for body, 3 for both
+		$c = 2;
 		$r = NULL;
 		$a = NULL;
 		$cf = $this->cookie_file;
