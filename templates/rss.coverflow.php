@@ -29,7 +29,6 @@ setRefreshTime(-1);
     setRefreshTime(-1);
     executeScript("loadData");
 
-    txt = "redrawDisplay executed for FMI = " + FMI + " - " + movieTitle; executeScript("log"); 
     redrawDisplay();
 
   </onRefresh>
