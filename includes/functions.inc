@@ -40,4 +40,4 @@ return $result;
 }
 $XEEURL = curPageDirURL();
 
-$XEEDIR = getcwd();	
+$XEEDIR = getcwd()+"/";	
