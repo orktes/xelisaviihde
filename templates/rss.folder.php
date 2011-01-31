@@ -21,7 +21,7 @@
 <link><?php echo curPageDirURL(); ?>ready.php?folder=<?php echo $folder->id; ?><?php if($folderid!="") { echo urlencode("&pfolder=").$folderid; } ?></link>                    
 <media:thumbnail url="<?php echo curPageDirURL(); ?>images/folder.jpg" />    
 
-<xeeType><![folder]]></xeeType>
+<xeeType><![CDATA[folder]]></xeeType>
 <id><?php echo $folder->id; ?></id>
 <name><![CDATA[Kansio: <?php echo $folder->name; ?>]]></name>
 <size><![CDATA[<?php echo $folder->size; ?>]]></size>

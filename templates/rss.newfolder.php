@@ -19,7 +19,7 @@
 <item>
 <title>UUSI HAKEMISTO</title>
 <name>Luo uusi kansio</name>
-<xeeType><![newfolder]]></xeeType>
+<xeeType><![CDATA[newfolder]]></xeeType>
 <link></link>    
 <media:thumbnail url="<?php echo curPageDirURL(); ?>images/new_folder.jpg" />    
 <description></description>

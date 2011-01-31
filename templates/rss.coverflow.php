@@ -91,38 +91,57 @@ setRefreshTime(-1);
 
 <text redraw="yes" tailDots="yes" fontSize="14" lines="1"
                                         offsetXPC="43" offsetYPC="25" widthPC="80" heightPC="5" 
-                                        backgroundColor="0:0:0" foregroundColor="0:154:205">
-      <script>  getItemInfo(getFocusItemIndex(), "name");
+                                        backgroundColor="0:0:0" foregroundColor="255:255:255">
+      <script>  
+      getItemInfo(getFocusItemIndex(), "name");
+
 </script>
 
     </text>
     <text redraw="yes" tailDots="yes" fontSize="14" lines="1"
                                         offsetXPC="43" offsetYPC="30" widthPC="80" heightPC="5" 
-                                        backgroundColor="0:0:0" foregroundColor="0:154:205">
+                                        backgroundColor="0:0:0" foregroundColor="255:255:255">
       <script> 
     
-       getItemInfo(getFocusItemIndex(), "channel");
+      if(getItemInfo(getFocusItemIndex(), "xeeType")=="recording") {
+          getItemInfo(getFocusItemIndex(), "channel");
+      } else if(getItemInfo(getFocusItemIndex(), "xeeType")=="folder") {
+    	  koko=getItemInfo(getFocusItemIndex(), "size");
+	"Koko: "+koko;
+      } else {
+    	  "";
+    	            }
       
 </script>
 
     </text>
     <text redraw="yes" tailDots="yes" fontSize="14" lines="1"
                                         offsetXPC="43" offsetYPC="35" widthPC="80" heightPC="5" 
-                                        backgroundColor="0:0:0" foregroundColor="0:154:205">
+                                        backgroundColor="0:0:0" foregroundColor="255:255:255">
       <script> 
-    
-       getItemInfo(getFocusItemIndex(), "startTime");
+      if(getItemInfo(getFocusItemIndex(), "xeeType")=="recording") {
+          getItemInfo(getFocusItemIndex(), "startTime");
+    } else if(getItemInfo(getFocusItemIndex(), "xeeType")=="folder") { 
+    	  maara=getItemInfo(getFocusItemIndex(), "recordingsCount");
+    		"Nauhoituksia "+maara+" kpl";
+    } else {
+    	"";
+    	          }
   
 </script>
 
     </text>
         <text redraw="yes" tailDots="yes" fontSize="14" lines="1"
                                         offsetXPC="43" offsetYPC="40" widthPC="80" heightPC="5" 
-                                        backgroundColor="0:0:0" foregroundColor="0:154:205">
+                                        backgroundColor="0:0:0" foregroundColor="255:255:255">
       <script> 
-      
+      if(getItemInfo(getFocusItemIndex(), "xeeType")=="recording") {
+    	      
 kesto = getItemInfo(getFocusItemIndex(), "videolength");
       "kesto: "+ kesto +" min";
+      } else {
+"";
+          }
 
 </script>
 
@@ -132,7 +151,12 @@ kesto = getItemInfo(getFocusItemIndex(), "videolength");
         getItemInfo(getFocusItemIndex(), "thumbnail");
         </script>
       </image>
+  <image offsetXPC=10 offsetYPC=6.8 widthPC=20 heightPC=15>
+      <?php echo curPageDirURL(); ?>images/mainmenulogo.png
+      </image>
+      
 
+      
 </mediaDisplay>
  
   <destination>
@@ -149,8 +173,8 @@ kesto = getItemInfo(getFocusItemIndex(), "videolength");
 <channel>
 <title>Nauhoitukset</title>
 
-<?php if($folderid!="") { include("templates/rss.prevfolder.php"); } ?>
-<?php  include("templates/rss.newfolder.php"); ?>
+<?php // if($folderid!="") { include("templates/rss.prevfolder.php"); } ?>
+<?php // include("templates/rss.newfolder.php"); ?>
 <?php foreach($folders as $folder) { include("templates/rss.folder.php");  }  ?>
 <?php foreach($recordings as $recording) { include("templates/rss.recording.php");  }  ?>
 

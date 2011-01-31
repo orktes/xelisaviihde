@@ -21,7 +21,7 @@
 <name>Edellinen kansio</name>
 <link><?php echo curPageDirURL(); ?>ready.php<?php if(isset($_GET['pfolder'])) { echo "?folder=".$_GET['pfolder']; } ?></link>                    
 <description></description>
-<xeeType><![folder]]></xeeType>
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/pref_folder.jpg" />    
+<xeeType><![CDATA[prevfolder]]></xeeType>
+<media:thumbnail url="<?php echo curPageDirURL(); ?>images/prevfolder.jpg" />    
 
 </item>
