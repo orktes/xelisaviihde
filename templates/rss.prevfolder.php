@@ -19,9 +19,9 @@
 <item>
 <title>..</title>
 <name>Edellinen kansio</name>
-<link><?php echo curPageDirURL(); ?>ready.php<?php if(isset($_GET['pfolder'])) { echo "?folder=".$_GET['pfolder']; } ?></link>                    
+<link><?php echo $XEEURL; ?>ready.php<?php if(isset($_GET['pfolder'])) { echo "?folder=".$_GET['pfolder']; } ?></link>                    
 <description></description>
 <xeeType><![CDATA[prevfolder]]></xeeType>
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/prevfolder.jpg" />    
+<media:thumbnail url="<?php echo $XEEURL; ?>images/prevfolder.jpg" />    
 
 </item>

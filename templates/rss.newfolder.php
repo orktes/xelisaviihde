@@ -21,6 +21,6 @@
 <name>Luo uusi kansio</name>
 <xeeType><![CDATA[newfolder]]></xeeType>
 <link></link>    
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/new_folder.jpg" />    
+<media:thumbnail url="<?php echo $XEEURL; ?>images/new_folder.jpg" />    
 <description></description>
 </item>

@@ -74,7 +74,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 
 
-  <image offsetXPC=13.35 offsetYPC=23.2 widthPC=73.3 heightPC=53.6><?php echo curPageDirURL(); ?>images/mainmenulogo.png</image>
+  <image offsetXPC=13.35 offsetYPC=23.2 widthPC=73.3 heightPC=53.6><?php echo $XEEDIR; ?>images/mainmenulogo.png</image>
 
 <itemDisplay>
         <image redraw="yes" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="100" >
@@ -105,46 +105,46 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 <title></title>
 <item>
 <title>Valmiit nauhoitukset</title>
-<link><?php echo curPageDirURL(); ?>ready.php</link>                    
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/mainmenuready.jpg" />    
-<image><?php echo curPageDirURL(); ?>images/mainmenuready.jpg</image>    
-<imageover><?php echo curPageDirURL(); ?>images/mainmenuready_over.jpg</imageover> 
+<link><?php echo $XEEURL; ?>ready.php</link>                    
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuready.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuready.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuready_over.jpg</imageover> 
  <itemid>0</itemid>
 
 </item>
 <item>
 <title>Tulevat nauhoitukset</title>
-<link><?php echo curPageDirURL(); ?>scheduled.php</link> >                    
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/mainmenuscheduled.jpg" />    
-<image><?php echo curPageDirURL(); ?>images/mainmenuscheduled.jpg</image>    
-<imageover><?php echo curPageDirURL(); ?>images/mainmenuscheduled_over.jpg</imageover> 
+<link><?php echo $XEEURL; ?>scheduled.php</link> >                    
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuscheduled.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuscheduled.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuscheduled_over.jpg</imageover> 
  <itemid>1</itemid>
 
 </item>
 <item>
 <title>Kanavaopas</title>
-<link><?php echo curPageDirURL(); ?>epg.php</link>                     
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/mainmenuinfo.jpg" />  
-<image><?php echo curPageDirURL(); ?>images/mainmenuinfo.jpg</image>    
-<imageover><?php echo curPageDirURL(); ?>images/mainmenuinfo_over.jpg</imageover> 
+<link><?php echo $XEEURL; ?>epg.php</link>                     
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuinfo.jpg" />  
+<image><?php echo $XEEDIR; ?>images/mainmenuinfo.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuinfo_over.jpg</imageover> 
  <itemid>2</itemid>
   
 </item>
 <item>
 <title>Asetukset</title>
-<link><?php echo curPageDirURL(); ?>settings.php</link> 
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/mainmenusettings.jpg" />    
-<image><?php echo curPageDirURL(); ?>images/mainmenusettings.jpg</image>    
-<imageover><?php echo curPageDirURL(); ?>images/mainmenusettings_over.jpg</imageover> 
+<link><?php echo $XEEURL; ?>settings.php</link> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenusettings.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenusettings.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenusettings_over.jpg</imageover> 
  <itemid>3</itemid>
 
 </item>
 <item>
 <title>Päivitä</title>
-<link><?php echo curPageDirURL(); ?>update.php</link> 
-<media:thumbnail url="<?php echo curPageDirURL(); ?>images/mainmenuupdate.jpg" />  
-<image><?php echo curPageDirURL(); ?>images/mainmenuupdate.jpg</image>    
-<imageover><?php echo curPageDirURL(); ?>images/mainmenuupdate_over.jpg</imageover> 
+<link><?php echo $XEEURL; ?>update.php</link> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuupdate.jpg" />  
+<image><?php echo $XEEDIR; ?>images/mainmenuupdate.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuupdate_over.jpg</imageover> 
 <itemid>4</itemid>
   
 </item>

@@ -21,9 +21,9 @@
 <link></link>     
 <media:thumbnail url="http://tvmedia16.pa.saunalahti.fi/thumbnails/<?php echo $recording->program_id; ?>.jpg" />
                
-<link><?php echo curPageDirURL(); ?>watch.php?id=<?php echo $recording->program_id; ?></link>
+<link><?php echo $XEEURL; ?>watch.php?id=<?php echo $recording->program_id; ?></link>
 
-<enclosure type="video/mpeg"  url="<?php echo curPageDirURL(); ?>watch.php?id=<?php echo $recording->program_id; ?>"/>
+<enclosure type="video/mpeg"  url="<?php echo $XEEURL; ?>watch.php?id=<?php echo $recording->program_id; ?>"/>
 <xeeType><![CDATA[recording]]></xeeType>
 <id><?php echo $recording->id; ?></id>
 <programId><?php echo $recording->program_id; ?></programId>
