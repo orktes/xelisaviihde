@@ -152,10 +152,23 @@ kesto = getItemInfo(getFocusItemIndex(), "videolength");
         </script>
       </image>
   <image offsetXPC=10 offsetYPC=6.8 widthPC=20 heightPC=15>
-      <?php echo $XEEDIR; ?>images/mainmenulogo.png
+      <?php echo $XEEDIR; ?>images/logo_small.jpg
       </image>
       
+<onUserInput>
+userInput = currentUserInput();
 
+      
+      /* OPEN LISTVIEW */
+      if ( userInput == "2" )  {
+          showIdle();
+        url =  "<?php echo $XEEURL ?>ready.php?view=listview";
+        jumpToLink("destination");
+        redrawDisplay();
+        ret;
+      }
+      
+  </onUserInput>   
       
 </mediaDisplay>
  
