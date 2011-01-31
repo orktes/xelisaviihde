@@ -19,7 +19,7 @@
 
 require_once('configuration.php');
 require_once('libs/elisa.class.php');
-include('includes/functions.inc');
+include('includes/variables.inc');
 
 
 $elisaviihde = new PHPElisaViihde($username, $password);

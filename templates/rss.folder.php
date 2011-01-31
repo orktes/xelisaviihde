@@ -18,7 +18,7 @@
 ?>
 <item>
 <title><?php echo $folder->name ?> - <?php echo $folder->recordings_count ?> nauhoitusta - <?php echo $folder->size ?></title>
-<link><?php echo $XEEDIR; ?>ready.php?folder=<?php echo $folder->id; ?><?php if($folderid!="") { echo urlencode("&pfolder=").$folderid; } ?></link>                    
+<link><?php echo $XEEURL; ?>ready.php?folder=<?php echo $folder->id; ?><?php if($folderid!="") { echo urlencode("&pfolder=").$folderid; } ?></link>                    
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/folder.jpg" />    
 
 <xeeType><![CDATA[folder]]></xeeType>

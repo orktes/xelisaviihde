@@ -20,7 +20,7 @@
 
 require_once('configuration.php');
 require_once('libs/elisa.class.php');
-include('includes/functions.inc');
+include('includes/variables.inc');
 
 
 $elisaviihde = new PHPElisaViihde($username, $password);
@@ -37,6 +37,7 @@ $recordings = $ready->ready_data[0]->recordings;
 header("Content-Type: application/rss+xml");
 echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
-include('templates/rss.coverflow.php');
+
+include('includes/inittemplate.inc');
 
 ?>

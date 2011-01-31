@@ -16,7 +16,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-include('includes/functions.inc');
+include('includes/variables.inc');
 header("Content-Type: application/rss+xml");
 echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 ?>
