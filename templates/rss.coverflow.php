@@ -152,7 +152,7 @@ kesto = getItemInfo(getFocusItemIndex(), "videolength");
         </script>
       </image>
   <image offsetXPC=10 offsetYPC=6.8 widthPC=20 heightPC=15>
-      <?php echo $XEEURL; ?>images/mainmenulogo.png
+      <?php echo $XEEDIR; ?>images/mainmenulogo.png
       </image>
       
 
