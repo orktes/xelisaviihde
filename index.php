@@ -106,45 +106,45 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 <item>
 <title>Valmiit nauhoitukset</title>
 <link><?php echo $XEEURL; ?>ready.php</link>                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuready.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuready.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuready_over.jpg</imageover> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready_over.jpg</imageover> 
  <itemid>0</itemid>
 
 </item>
 <item>
 <title>Tulevat nauhoitukset</title>
 <link><?php echo $XEEURL; ?>scheduled.php</link> >                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuscheduled.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuscheduled.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuscheduled_over.jpg</imageover> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled_over.jpg</imageover> 
  <itemid>1</itemid>
 
 </item>
 <item>
 <title>Kanavaopas</title>
 <link><?php echo $XEEURL; ?>epg.php</link>                     
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuinfo.jpg" />  
-<image><?php echo $XEEDIR; ?>images/mainmenuinfo.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuinfo_over.jpg</imageover> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg" />  
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo_over.jpg</imageover> 
  <itemid>2</itemid>
   
 </item>
 <item>
 <title>Asetukset</title>
 <link><?php echo $XEEURL; ?>settings.php</link> 
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenusettings.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenusettings.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenusettings_over.jpg</imageover> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings_over.jpg</imageover> 
  <itemid>3</itemid>
 
 </item>
 <item>
 <title>Päivitä</title>
 <link><?php echo $XEEURL; ?>update.php</link> 
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuupdate.jpg" />  
-<image><?php echo $XEEDIR; ?>images/mainmenuupdate.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuupdate_over.jpg</imageover> 
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg" />  
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg</image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate_over.jpg</imageover> 
 <itemid>4</itemid>
   
 </item>
