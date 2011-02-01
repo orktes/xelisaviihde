@@ -1,18 +1,18 @@
 <?php
-/* Copyright Jaakko Lukkari 2011 
- *  
- * This program is free software; you can redistribute it and/or modify 
- * it under the terms of the GNU General Public License as published by 
- * the Free Software Foundation; either version 2 of the License, or 
+/* Copyright Jaakko Lukkari 2011
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but 
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
- * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
  * for more details.
- * 
- * You should have received a copy of the GNU General Public License along 
- * with this program; if not, write to the Free Software Foundation, Inc., 
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 class PHPElisaViihde {
@@ -25,7 +25,7 @@ class PHPElisaViihde {
 	function PHPElisaViihde($username, $password) {
 		$this->username=$username;
 		$this->password=$password;
-		$this->login();
+
 	}
 
 	function getProgramInformation($programId) {
@@ -129,20 +129,13 @@ class PHPElisaViihde {
 		return json_decode($data);
 	}
 	function getReady($folderid="", $pos=null) {
-
 		$loadUrl=$this->serviceUrl."ready.sl?folderid=$folderid".($pos!=null?"&ppos=$pos":"")."&ajax";
 		$data=$this->get($loadUrl);
-
 		return json_decode($data);
 
 	}
-function getVideoFileUrl($id) {
-		$url="http://elisaviihde.fi/etvrecorder/";
-		if(!$this->login) {
-			$this->get($url."ready.sl?clear=true&username=".$this->username."&password=".$this->password);
-			$this->login=true;
-		}
-		$html=$this->get($url.'program.sl?programid='.$id.'&view=true');
+	function getVideoFileUrl($id) {
+		$html=$this->get($this->serviceUrl.'program.sl?programid='.$id.'&view=true');
 		return $this->get_string_between($html,"doGo('","')");
 	}
 
@@ -172,7 +165,7 @@ function getVideoFileUrl($id) {
 		if ($r){
 			$send .= "Referer: $r\r\n";
 		}else{
-			if ($_SERVER['HTTP_REFERER']){
+			if (isset($_SERVER['HTTP_REFERER'])){
 				$send .= "Referer: {$_SERVER['HTTP_REFERER']}\r\n";
 			}
 		}
@@ -188,8 +181,10 @@ function getVideoFileUrl($id) {
 		$send .= "Accept-Language: en-us, en;q=0.50\r\n";
 		if ($a){
 			$send .= "User-Agent: $a\r\n";
-		}else{
+		}else if(isset($_SERVER['HTTP_USER_AGENT'])){
 			$send .= "User-Agent: {$_SERVER['HTTP_USER_AGENT']}\r\n";
+		} else {
+			$send .= "User-Agent: Mozilla/5.0 (X11; U; Linux i686; fi-FI; rv:1.9.2.13) Gecko/20101206 Ubuntu/10.04 (lucid) Firefox/3.6.13\r\n";
 		}
 		if ($pd){
 			$send .= "Content-Type: application/x-www-form-urlencoded\r\n";
@@ -199,12 +194,13 @@ function getVideoFileUrl($id) {
 			$send .= "Connection: Close\r\n\r\n";
 		}
 		fputs($open, $send);
+		$results="";
 		while (!feof($open)) {
-			$return .= fgets($open, 4096);
+			$results .= fgets($open, 4096);
 		}
 		fclose($open);
-		$return = @explode("\r\n\r\n",$return,2);
-		$header = $return[0];
+		$results = @explode("\r\n\r\n",$results,2);
+		$header = $results[0];
 		if ($cf){
 			if (preg_match("/Set\-Cookie\: /i","$header")){
 				$cookie = @explode("Set-Cookie: ",$header,2);
@@ -218,32 +214,34 @@ function getVideoFileUrl($id) {
 
 				$cookie = str_replace("path=/","",$cookie);
 
-				$add = @fopen($cf,'w');
+				$add = fopen($cf,'w');
 				fwrite($add,$cookie,strlen($cookie));
 				fclose($add);
+
+
 			}
 		}
 		if ($oldheader){
 			$header = "$oldheader<br /><br />\n$header";
 		}
 		$header = str_replace("\n","<br />",$header);
-		if ($return[1]){
-			$body = $return[1];
+		if ($results[1]){
+			$body = $results[1];
 		}else{
 			$body = "";
 		}
 		if ($c === 2){
 			if ($body){
-				$return = $body;
+				$results = $body;
 			}else{
-				$return = $header;
+				$results = $header;
 			}
 		}
 		if ($c === 1){
-			$return = $header;
+			$results = $header;
 		}
 		if ($c === 3){
-			$return = "$header$body";
+			$results = "$header$body";
 		}
 		if ($f){
 			if (preg_match("/Location\:/","$header")){
@@ -256,13 +254,13 @@ function getVideoFileUrl($id) {
 				$oldheader = str_replace("Location:",$l,$oldheader);
 				return open_page($url,$f,$c,$r,$a,$cf,$pd);
 			}else{
-				return $return;
+				return $results;
 			}
 		}else{
-			return $return;
+			return $results;
 		}
 	}
-	
+
 	private function get($url) {
 		$f = 1;
 		$c = 2;
@@ -272,10 +270,10 @@ function getVideoFileUrl($id) {
 		$pd = NULL;
 
 		$data = $this->open_page($url,$f,$c,$r,$a,$cf,$pd);
-		
-	//	echo $url."\n";
-	//	echo $data;
-		
+
+		//	echo $url."\n";
+		//	echo $data;
+
 		return $data;
 	}
 	private function get_string_between($string, $start, $end){

@@ -20,10 +20,11 @@
 
 require_once('configuration.php');
 require_once('libs/elisa.class.php');
-include('includes/variables.inc');
+require_once('includes/variables.inc');
 
 
 $elisaviihde = new PHPElisaViihde($username, $password);
+$elisaviihde->login();
 
 $folderid="";
 if(isset($_GET['folder'])){

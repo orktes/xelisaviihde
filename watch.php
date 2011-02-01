@@ -23,6 +23,7 @@ include('includes/variables.inc');
 
 
 $elisaviihde = new PHPElisaViihde($username, $password);
+$elisaviihde->login();
 
 if(isset($_GET['id'])) {
 $id=$_GET['id'];
