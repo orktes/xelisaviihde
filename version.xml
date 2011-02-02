@@ -1,6 +1,6 @@
 <package>
-<name>xelisaviihde</name>
-<version>1.0.0</version>
-<copyright>vatvit.org - Jaakko Lukkari</copyright>
-<licence>GNU General Public License v2</licence>
+	<name>xelisaviihde</name>
+	<version>1.0.0</version>
+	<copyright>vatvit.org - Jaakko Lukkari</copyright>
+	<licence>GNU General Public License v2</licence>
 </package>
