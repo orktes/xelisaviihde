@@ -30,6 +30,7 @@ $currentVersion = $currentVersion;
 $newestVersion = $newestVersion;
 
 if(version_compare($currentVersion, $newestVersion, '<')) {
+
 	
 	//get file
     $ch = curl_init();
@@ -48,16 +49,19 @@ if(version_compare($currentVersion, $newestVersion, '<')) {
 	
 	$archive = new PclZip('updateTempFile.zip');
     
-	if ($archive->extract(PCLZIP_OPT_ADD_PATH, '.',  PCLZIP_OPT_REMOVE_PATH, 'xelisaviihde') == 0) {
-	unlink('updateTempFile.zip');
 
+	if ($archive->extract(PCLZIP_OPT_PATH, '.',
+                        PCLZIP_OPT_REMOVE_PATH, 'xelisaviihde',  PCLZIP_OPT_REPLACE_NEWER) == 0) {
+                        	
+                   unlink('updateTempFile.zip');
+	echo "Epäonnistui!";
 		
 				//Päivitys epäonnistui
 		
 	} else {
 		
-	unlink('updateTempFile.zip'');
-			//päivitys onnistui
+	unlink('updateTempFile.zip');
+		echo "Onnistui!";	//päivitys onnistui
 	}
 	
 	
