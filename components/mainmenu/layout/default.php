@@ -91,7 +91,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 <title></title>
 <item>
 <title>Valmiit nauhoitukset</title>
-<link><?php echo $XEEURL; ?>ready.php</link>                    
+<link><?php echo $XEEURL; ?>index.php?option=ready</link>                    
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg" />    
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg</image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready_over.jpg</imageover> 
@@ -100,7 +100,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 </item>
 <item>
 <title>Tulevat nauhoitukset</title>
-<link><?php echo $XEEURL; ?>scheduled.php</link> >                    
+<link><?php echo $XEEURL; ?>index.php?option=scheduled</link> >                    
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg" />    
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg</image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled_over.jpg</imageover> 
@@ -109,7 +109,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 </item>
 <item>
 <title>Kanavaopas</title>
-<link><?php echo $XEEURL; ?>epg.php</link>                     
+<link><?php echo $XEEURL; ?>index.php?option=epg</link>                     
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg" />  
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg</image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo_over.jpg</imageover> 
@@ -118,7 +118,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 </item>
 <item>
 <title>Asetukset</title>
-<link><?php echo $XEEURL; ?>settings.php</link> 
+<link><?php echo $XEEURL; ?>index.php?option=settings</link> 
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg" />    
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg</image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings_over.jpg</imageover> 
@@ -127,7 +127,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 </item>
 <item>
 <title>Päivitä</title>
-<link><?php echo $XEEURL; ?>update.php</link> 
+<link><?php echo $XEEURL; ?>index.php?option=update</link> 
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg" />  
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg</image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate_over.jpg</imageover> 
