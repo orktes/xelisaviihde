@@ -9,7 +9,7 @@
 
 	<item>
 		<name>Tulevat nauhoitukset</name>
-		<component>scheduled</component>		
+		<component>scheduled</component>
 		<image>mainmenuscheduled.jpg</image>
 		<imageover>mainmenuscheduled_over.jpg</imageover>
 	</item>
@@ -36,7 +36,6 @@
 		<component>update</component>
 		<image>mainmenuupdate.jpg</image>
 		<imageover>mainmenuupdate_over.jpg</imageover>
-
 	</item>
 
 
