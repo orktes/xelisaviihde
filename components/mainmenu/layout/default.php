@@ -89,51 +89,22 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 <channel>
 <title></title>
+<?php 
+$i=0;
+foreach($this->menuitems as $item) {
+$i++;
+?>
 <item>
-<title>Valmiit nauhoitukset</title>
-<link><?php echo $XEEURL; ?>index.php?option=ready</link>                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuready_over.jpg</imageover> 
- <itemid>0</itemid>
+<title><?php echo $item->name; ?></title>
+<link><?php echo $XEEURL; ?>index.php?option=<?php echo $item->component; ?></link> >                    
+<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
+<image><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
+<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
+<itemid><?php echo $i; ?></itemid>
+</item>
+<?php } ?>
 
-</item>
-<item>
-<title>Tulevat nauhoitukset</title>
-<link><?php echo $XEEURL; ?>index.php?option=scheduled</link> >                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuscheduled_over.jpg</imageover> 
- <itemid>1</itemid>
 
-</item>
-<item>
-<title>Kanavaopas</title>
-<link><?php echo $XEEURL; ?>index.php?option=epg</link>                     
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg" />  
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuinfo_over.jpg</imageover> 
- <itemid>2</itemid>
-  
-</item>
-<item>
-<title>Asetukset</title>
-<link><?php echo $XEEURL; ?>index.php?option=settings</link> 
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenusettings_over.jpg</imageover> 
- <itemid>3</itemid>
-
-</item>
-<item>
-<title>Päivitä</title>
-<link><?php echo $XEEURL; ?>index.php?option=update</link> 
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg" />  
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate.jpg</image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/mainmenuupdate_over.jpg</imageover> 
-<itemid>4</itemid>
-  
-</item>
 </channel>
 </rss>
 

@@ -7,6 +7,9 @@ class MainMenuXElisaViihdeView extends XElisaViihdeView {
 	function render($tmpl='default') {
 		$model=$this->getModel();
 	
+		$menuitems = $model->getMenuItems();
+		
+		$this->assignRef('menuitems',$menuitems);
 		
 		return parent::render($tmpl);
 	}
