@@ -21,6 +21,7 @@ class PHPElisaViihde {
 	var $vhttp=null;
 	var $cookie_file="cookie.txt";
 	var $serviceUrl="http://elisaviihde.fi/etvrecorder/";
+	var $logged=false;
 
 	function PHPElisaViihde($username, $password) {
 		$this->username=$username;
@@ -112,8 +113,13 @@ class PHPElisaViihde {
 	function login() {
 		$loadUrl=$this->serviceUrl."default.sl?username=".$this->username."&password=".$this->password."&ajax";
 		$data=$this->get($loadUrl);
+		$this->logged=json_decode($data);
 
-		return json_decode($data);
+		return $this->logged;
+	}
+
+	function isLogged() {
+		return $this->logged;
 	}
 
 	function getChannels() {
