@@ -1,4 +1,6 @@
 <?php
+
+
 /* Copyright Jaakko Lukkari 2011 
  *  
  * This program is free software; you can redistribute it and/or modify 
@@ -22,7 +24,7 @@ require_once('configuration.php');
 require_once('includes/variables.inc');
 require_once('libs/elisa.class.php');
 
-$elisaviihde = new PHPElisaViihde($username, $password);
+$elisaviihde = new ElisaViihde($username, $password, false);
 
 $option="mainmenu";
 
@@ -42,7 +44,7 @@ if(file_exists($XEEDIR.'components/'.$option.'/layout/default.php')
 	require_once($XEEDIR.'components/'.$option.'/v.php');
 	require_once($XEEDIR.'components/'.$option.'/c.php');
 
-	$layout=$XEEDIR.'components/'.$option.'/layout/';
+	$layout=$XEEDIR.'components/'.$option.'/layout';
 
 
 	//luodaan model

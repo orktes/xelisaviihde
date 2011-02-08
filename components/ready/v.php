@@ -36,15 +36,16 @@ class ReadyXElisaViihdeView extends XElisaViihdeView {
 		$view="";
 		if(isset($_REQUEST['view'])) {
 			$view=$_REQUEST['view'];
-		}
-		if($view!=""||$view!="coverflow") {
+		if($view!=""&&$view!="coverflow") {
 			$tmpl=$view;
+		} 
 		} else {
 			$tmpl="default";
 		}
 		
 		
-	$this->assignRef('view',$view);
+		
+		$this->assignRef('view',$view);
 		$this->assignRef('folders',$folders);
 		$this->assignRef('recordings',$recordings);
 		$this->assignRef('folderid',$folderid);

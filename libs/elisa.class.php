@@ -15,100 +15,173 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-class PHPElisaViihde {
+class ElisaViihde {
 	var $username=null;
 	var $password=null;
 	var $vhttp=null;
 	var $cookie_file="cookie.txt";
+	var $storeCookiesToSession=false;
+	var $cookiesSessionVariable="evcookies";
 	var $serviceUrl="http://elisaviihde.fi/etvrecorder/";
 	var $logged=false;
 
-	function PHPElisaViihde($username, $password) {
+	function ElisaViihde($username, $password, $storeCookiesToSession=false) {
+		
 		$this->username=$username;
 		$this->password=$password;
-
+		$this->storeCookiesToSession=$storeCookiesToSession;
+	
 	}
-
+	function setCookiesSessionVariable($cookiesSessionVariable) {
+		$this->cookiesSessionVariable=$cookiesSessionVariable;
+	}
+	function getCookiesSessionVariable() {
+		return $this->cookiesSessionVariable;
+	}
+	function setCookieFile($cookieFile) {
+		$this->cookie_file=$cookieFile;
+	}
+	function getCookieFile($cookieFile) {
+		return $this->cookie_file;
+	}
 	function getProgramInformation($programId) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."program.sl?programid=$programId&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 
 	}
 	function moveProgramToFolder($programId, $folder) {
+		if($this->logged) {
+	
 		$loadUrl=$this->serviceUrl."ready.sl?programviewid=$programId&destination=$folder&move=true&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function removeProgram($programId) {
+		if($this->logged) {
+	
 		$loadUrl=$this->serviceUrl."program.sl?removep=$programId&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function createFolder($name, $parent=null) {
+		if($this->logged) {
+	
 		$loadUrl=$this->serviceUrl."ready.sl?folder=$name".($parent!=null?"&parent=$parent":"")."&create_subfolder&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function renameFolder($folder, $new_name) {
+		
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."ready.sl?rename_folder=$folder&name=$new_name&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function removeFolder($folder) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."ready.sl?delete_folder=$folder&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function getScheduledRecordings() {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."recordings.sl?ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function addScheduledRecording($programId, $folderid=null) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."program.sl?record=$programId".($folder!=null?"&folderid=$folderid":"")."&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function removeScheduledRecording($programId) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."program.sl?remover=$programId&ajax";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
-	}
+		} else {
+			return null;
+		}
+		}
 	function getRecordingWildCards() {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."wildcards.sl?ajax";
 		$data=$this->get($loadUrl);
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function addRecordingWildCard($wildcard,$channel, $folder) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."wildcards.sl?wildcard=$wildcard&channel=$channel&folderid=$folder&record=true&ajax";
 		$data=$this->get($loadUrl);
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function removeRecordingWildCard($wildcardid) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."wildcards.sl?remover=$wildcardid&ajax";
 		$data=$this->get($loadUrl);
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function getWeekSchedule() {
+		
 		$loadUrl=$this->serviceUrl."ajaxprograminfo.sl";
 		$data=$this->get($loadUrl);
 
 		return json_decode($data);
+		
 	}
 	function get24HScheduleForChannel($channel) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."ajaxprograminfo.sl?24h=$channel";
 		$data=$this->get($loadUrl);
 		return json_decode($data);
+		} else {
+			return null;
+		}
 	}
 	function login() {
 		$loadUrl=$this->serviceUrl."default.sl?username=".$this->username."&password=".$this->password."&ajax";
@@ -135,14 +208,22 @@ class PHPElisaViihde {
 		return json_decode($data);
 	}
 	function getReady($folderid="", $pos=null) {
+		if($this->logged) {
 		$loadUrl=$this->serviceUrl."ready.sl?folderid=$folderid".($pos!=null?"&ppos=$pos":"")."&ajax";
 		$data=$this->get($loadUrl);
 		return json_decode($data);
+		} else {
+			return null;
+		}
 
 	}
 	function getVideoFileUrl($id) {
+		if($this->logged) {
 		$html=$this->get($this->serviceUrl.'program.sl?programid='.$id.'&view=true');
 		return $this->get_string_between($html,"doGo('","')");
+		} else {
+			return null;
+		}
 	}
 
 	private function open_page($url,$f=1,$c=2,$r=0,$a=0,$cf=0,$pd=""){
@@ -176,8 +257,16 @@ class PHPElisaViihde {
 			}
 		}
 		if ($cf){
-			if (@file_exists($cf)){
-				$cookie = urldecode(@file_get_contents($cf));
+			if (@file_exists($cf)||$this->storeCookiesToSession){
+				if($this->storeCookiesToSession) {
+					session_start();
+					if(isset($_SESSION[$this->cookiesSessionVariable])){
+						$cookie=urldecode($_SESSION[$this->cookiesSessionVariable]);
+					}
+				} else {
+					$cookie = urldecode(@file_get_contents($cf));
+				}
+
 				if ($cookie){
 					$send .= "Cookie: $cookie\r\n";
 
@@ -220,9 +309,14 @@ class PHPElisaViihde {
 
 				$cookie = str_replace("path=/","",$cookie);
 
-				$add = fopen($cf,'w');
-				fwrite($add,$cookie,strlen($cookie));
-				fclose($add);
+				if(!$this->storeCookiesToSession) {
+					$add = fopen($cf,'w');
+					fwrite($add,$cookie,strlen($cookie));
+					fclose($add);
+				} else {
+					session_start();
+					$_SESSION[$this->cookiesSessionVariable]=$cookie;
+				}
 
 
 			}
@@ -268,6 +362,8 @@ class PHPElisaViihde {
 	}
 
 	private function get($url) {
+		
+		
 		$f = 1;
 		$c = 2;
 		$r = NULL;

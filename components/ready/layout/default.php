@@ -36,7 +36,7 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 thumb = getItemInfo(getFocusItemIndex(), "thumbnail");
 name = getItemInfo(getFocusItemIndex(), "name");
- txt = name; executeScript("log");  
+ 
 
 
 </loadData>
