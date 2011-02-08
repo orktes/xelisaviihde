@@ -16,8 +16,8 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
-require_once($XEEDIR.'libs/mvc/m.php');
-class MainMenuXElisaViihdeModel extends XElisaViihdeModel {
+require_once($XRUUTUDIR.'libs/mvc/m.php');
+class MainMenuXRuutuModel extends XRuutuModel {
 	function getMenuItems() {
 		
 		global $XEEDIR;

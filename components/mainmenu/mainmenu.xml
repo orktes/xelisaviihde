@@ -1,42 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item>
-		<name>Valmiit nauhoitukset</name>
-		<component>ready</component>
-		<image>mainmenuready.jpg</image>
-		<imageover>mainmenuready_over.jpg</imageover>
+		<name>Valikko</name>
+		<component></component>
+		<image></image>
+		<imageover></imageover>
 	</item>
 
-	<item>
-		<name>Tulevat nauhoitukset</name>
-		<component>scheduled</component>
-		<image>mainmenuscheduled.jpg</image>
-		<imageover>mainmenuscheduled_over.jpg</imageover>
-	</item>
-
-	<item>
-		<name>Kanavaopas</name>
-		<component>epg</component>
-		<image>mainmenuinfo.jpg</image>
-		<imageover>mainmenuinfo_over.jpg</imageover>
-
-
-
-	</item>
-	<item>
-		<name>Asetukset</name>
-		<component>settings</component>
-		<image>mainmenusettings.jpg</image>
-		<imageover>mainmenusettings_over.jpg</imageover>
-
-
-	</item>
-	<item>
-		<name>Päivitä</name>
-		<component>update</component>
-		<image>mainmenuupdate.jpg</image>
-		<imageover>mainmenuupdate_over.jpg</imageover>
-	</item>
+	
 
 
 </items>
