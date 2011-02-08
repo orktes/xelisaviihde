@@ -18,16 +18,16 @@
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
 class XRuutuModel {
 	
-	private $elisaviihde =null;
+	private $ruutu =null;
 	
-		function __construct($elisaviihde) {
+		function __construct($ruutu) {
 			
-			$this->elisaviihde=$elisaviihde;
+			$this->ruutu=$ruutu;
 			
 		}
 	
-		function getElisaViihde() {
-			return $this->elisaviihde;
+		function getRuutu() {
+			return $this->ruutu;
 		}
 	
 	
