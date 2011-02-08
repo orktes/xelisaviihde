@@ -17,7 +17,7 @@
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
 require_once($XEEDIR.'libs/mvc/v.php');
-class ReadyXElisaViihdeView extends XElisaViihdeView {
+class ScheduledXElisaViihdeView extends XElisaViihdeView {
 	
 	
 	function render($tmpl='default') {
@@ -29,6 +29,7 @@ class ReadyXElisaViihdeView extends XElisaViihdeView {
 		$folderid=$model->getFolderId();
 		
 		
+
 		
 		
 		
@@ -46,6 +47,7 @@ class ReadyXElisaViihdeView extends XElisaViihdeView {
 		
 		
 		$this->assignRef('view',$view);
+
 		$this->assignRef('folders',$folders);
 		$this->assignRef('recordings',$recordings);
 		$this->assignRef('folderid',$folderid);

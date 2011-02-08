@@ -17,7 +17,7 @@
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
 require_once($XEEDIR.'libs/mvc/m.php');
-class ReadyXElisaViihdeModel extends XElisaViihdeModel {
+class ScheduledXElisaViihdeModel extends XElisaViihdeModel {
 
 	function getReady() {
 		$elisaviihde = parent::getElisaviihde();
