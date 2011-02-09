@@ -38,6 +38,7 @@ $result = substr($file, 0, -$strlen_str);
 return $result;
 	
 }
-$XRUUTUURL = curPageDirURL();
-$XRUUTUIR = getcwd()."/";	
+$XEEURL = curPageDirURL();
+$XEEDIR = getcwd()."/";	
+
 
