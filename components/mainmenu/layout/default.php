@@ -25,15 +25,6 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 ?>
 <rss version="2.0"  xmlns:media="http://purl.org/dc/elements/1.1/"  xmlns:dc="http://purl.org/dc/elements/1.1/">
 
-<onEnter>	
-	/* start rtmpgw */
-	ret = getURL("");
-</onEnter>
-
-<onExit>
-	/* stop rtmpgw */
-	ret = getURL("");
-</onExit>
 
  <mediaDisplay  name="photoView"
     imageBottomSide="null"
@@ -122,7 +113,7 @@ $i++;
 ?>
 <item>
 <title><?php echo $item->name; ?></title>
-<link><?php echo $XEEURL; ?>index.php?option=<?php echo $item->component; ?></link> >                    
+<link><?php echo $XEEURL; ?>index.php?option=<?php echo $item->component; ?></link>                    
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
 <image><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
 <imageover><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
