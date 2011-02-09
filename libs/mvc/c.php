@@ -16,7 +16,7 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
-class XRuutuController {
+class XElisaViihdeController {
 	private $model=null;
 	private $view=null;
 	private $layout=null;

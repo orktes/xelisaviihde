@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* Copyright Jaakko Lukkari 2011 
  *  
  * This program is free software; you can redistribute it and/or modify 
@@ -15,10 +15,13 @@
  * with this program; if not, write to the Free Software Foundation, Inc., 
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
-require_once($XEEDIR.'libs/mvc/c.php');
-class MainMenuXElisaViihdeController extends XElisaViihdeController  {
-	
-	
-	
-}
+?>
+<item>
+<title>..</title>
+<name>Edellinen kansio</name>
+<link><?php echo $XEEURL; ?>ready.php<?php if(isset($_GET['pfolder'])) { echo "?folder=".$_GET['pfolder']; } ?></link>                    
+<description></description>
+<xeeType><![CDATA[prevfolder]]></xeeType>
+<media:thumbnail url="<?php echo $XEEURL; ?>images/prevfolder.jpg" />    
+
+</item>

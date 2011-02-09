@@ -16,18 +16,18 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
-class XRuutuModel {
+class XElisaViihdeModel {
 	
-	private $ruutu =null;
+	private $elisaviihde =null;
 	
-		function __construct($ruutu) {
+		function __construct($elisaviihde) {
 			
-			$this->ruutu=$ruutu;
+			$this->elisaviihde=$elisaviihde;
 			
 		}
 	
-		function getRuutu() {
-			return $this->ruutu;
+		function getElisaViihde() {
+			return $this->elisaviihde;
 		}
 	
 	
